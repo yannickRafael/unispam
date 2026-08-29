@@ -92,12 +92,3 @@ python send.py batch --message "Olá {name}!" --dry-run
 - `{name}` → primeiro nome
 - `{fullname}` → nome completo
 
----
-
-## Notas técnicas
-
-- API usada: `core_message_send_instant_messages` (Moodle AJAX web services)
-- Autenticação: sessão por cookie (`MoodleSession`) + `sesskey` CSRF
-- Enumeração: `core_message_message_search_users` com paginação (`limitfrom` em steps de 50)
-- A DB contém ~2851 utilizadores (base ISUTC completa)
-- Usar `--delay` adequado para evitar rate limiting
